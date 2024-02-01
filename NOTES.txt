@@ -1,0 +1,51 @@
+## pseudocode 
+
+# level 1:
+FUN find_avilable seats(theater_seats)
+LIST to track available seats
+LOOP thru row
+LOOP thru seat
+IF seat[index] == ‘o’
+Add to available seats list
+RETURN available seats list
+
+# level 2:
+FUN find_pairs available seats(theater_seats)
+LIST to track available  pair seats
+LOOP thru row
+LOOP thru seat
+IF seat[index] == ‘o’ and seat[index+1}
+Add to available pair seats list
+RETURN available pair seats list
+
+# similar to 2? Double check with c2c
+# level 3:
+FUN find_pairs available seats(theater_seats)
+LIST to track available  pair seats
+LOOP thru row
+LOOP thru seat
+IF seat[index] == ‘o’ and seat[index+1}
+Add to available pair seats list
+RETURN available pair seats list
+
+# REMEMBER TO TEST
+
+
+# Refreshing brain on differnt loops on what scenarios they cater to
+# https://www.geeksforgeeks.org/loops-in-python/ 
+
+# Enumerate 
+# https://www.w3schools.com/python/ref_func_enumerate.asp
+
+# Testing Reference 
+# https://docs.python.org/3/library/unittest.html
+
+# NOTE: learned thru debugging that with the incorrect indentation of the return -> returns a single pair 
+def find_single_pair(theater_seats):
+pairs_available = []
+for row in theater_seats[1:]:
+    for index in range(len(row) - 1):
+        if row[index] == 'o' and row[index + 1] == 'o':
+            pairs = f"{row[0]}{theater_seats[0][index]}{theater_seats[0][index + 1]}"
+            pairs_available.append(pairs)
+            return pairs_available
